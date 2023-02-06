@@ -18,6 +18,7 @@
 #include <vector>
 #include <unordered_set>
 #include <cstring>
+#include <numeric>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ using namespace std;
 //const int LLINF = 4e18; 
 //const double EPS = 1e-9;
 //typedef long long ll; // common data types 
+//typedef unsigned long ul;
 //typedef pair<int, int> ii; // comments that are mixed typedef 
 //typedef vector<int> vi; // in with code are placed 
 //typedef vector<ii> vii; // on the right side 
