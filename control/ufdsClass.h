@@ -1,6 +1,9 @@
 // Implementation of the union find disjoint sets data structure
 // all in one file for fast copy paste in a competetion setting
 
+// modified to fit problem control
+// added functionality to keep track of set size.
+
 #ifndef UFDSCLASS_H
 #define UFDSCLASS_H
 
@@ -11,11 +14,13 @@ class Ufds{
     private:
         std::vector<int> parents;
         std::vector<int> treeHeights;
+        std::vector<int> setSize;
 
     public:
         Ufds(int n){
             parents.assign(n, 0);
             treeHeights.assign(n, 0);
+            setSize.assign(n, 1);
 
             for (int i{0}; i < n; ++i){
                 parents[i] = i;
@@ -41,6 +46,10 @@ class Ufds{
             return false;
         }
 
+        int getSize(int a) {
+            return setSize[getParent(a)];
+        }
+
         void makeUnion(int a, int b){
         
             if (!same(a, b)){
@@ -49,10 +58,12 @@ class Ufds{
 
                 if (heightA < heightB){
                     parents[parentA] = parentB;
+                    setSize[parentB] += setSize[parentA];
                 }
 
                 else {
                     parents[parentB] = parentA;
+                    setSize[parentA] += setSize[parentB];
                 }
 
                 if (heightA == heightB){

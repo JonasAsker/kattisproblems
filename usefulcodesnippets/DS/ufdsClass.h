@@ -28,8 +28,8 @@ class Ufds{
             return a;
             }
 
-            int parent = getParent(parents[a]);
-            return parent;
+            parents[a] = getParent(parents[a]);
+            return parents[a];
         }
 
         bool same(int a, int b){
