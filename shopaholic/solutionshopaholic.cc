@@ -43,13 +43,13 @@ typedef vector<int> vi; // in with code are placed
 //int ans = (int)((double)d + 0.5); 
 //ans = min(ans, new_computation); 
 
-// Title:
+// Title: shopaholic
+ 
+// Description: simply sort and pick every third item
 
-// Description:
+// Complexity: O(n*log(n))
 
-// Complexity:
-
-// Input constraints and expectations:
+// Input constraints and expectations: see kattis problem
 
 int main() {
     //freopen("prog.in", "r", stdin);
